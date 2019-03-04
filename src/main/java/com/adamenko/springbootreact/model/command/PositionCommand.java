@@ -2,7 +2,6 @@ package com.adamenko.springbootreact.model.command;
 
 import com.adamenko.springbootreact.model.Direction;
 import com.adamenko.springbootreact.model.Robot;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

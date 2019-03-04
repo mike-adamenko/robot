@@ -31,7 +31,7 @@ export default class Game extends React.Component {
             body: this.state.textAreaTxt,
         }).then(response => response.json())
             .then(data => {
-                this.state.squares[data.x][ data.y] = data.direction;
+                this.state.squares[data.y][ data.x] = data.direction;
                 this.forceUpdate();
                 //
                 // this.setState({

@@ -7,7 +7,7 @@ public class CommandFactory {
         String[] commandStr = commandString.split(" ");
         switch (CommandType.valueOf(commandStr[0])) {
             case POSITION:
-                String[] argsP = {commandStr[1], commandStr[2]};
+                String[] argsP = {commandStr[1], commandStr[2], commandStr[3]};
                 return new PositionCommand(argsP);
             case LEFT:
                 return new LeftCommand();
