@@ -3,6 +3,9 @@ package com.idealo.robot.command;
 
 import com.idealo.robot.model.Robot;
 
+/**
+ * @author Mike Adamenko (mnadamenko@gmail.com)
+ */
 public abstract class Command {
 
     private String[] args;

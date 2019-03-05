@@ -1,5 +1,8 @@
 package com.idealo.robot.command;
 
+/**
+ * @author Mike Adamenko (mnadamenko@gmail.com)
+ */
 public class CommandFactory {
     private static CommandType commandType;
     public static Command getCommand(String commandString) {

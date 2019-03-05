@@ -5,6 +5,9 @@ import com.idealo.robot.model.Robot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @author Mike Adamenko (mnadamenko@gmail.com)
+ */
 public class RightCommand extends Command {
     private final Logger log = LoggerFactory.getLogger(RightCommand.class);
 

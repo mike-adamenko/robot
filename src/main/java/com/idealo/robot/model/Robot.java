@@ -1,5 +1,9 @@
 package com.idealo.robot.model;
 
+/**
+ * Robot
+ * @author Mike Adamenko (mnadamenko@gmail.com)
+ */
 public class Robot {
 
     public static final Integer MAX_POSITION = 4;
