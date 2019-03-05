@@ -1,9 +1,9 @@
 import React from 'react';
 import Board from './board';
-import {Button, Col, Container, Row, Form, FormGroup, Label, Jumbotron} from 'reactstrap';
+import {Button, Col, Container, Form, Jumbotron, Row} from 'reactstrap';
 
 export default class Game extends React.Component {
-     script = 'POSITION 1 3 EAST //sets the initial position for the robot as x, y.\n' +
+    script = 'POSITION 1 3 EAST //sets the initial position for the robot as x, y.\n' +
         'FORWARD 3 //lets the robot do 3 steps forward\n' +
         'WAIT //lets the robot do nothing\n' +
         'TURNAROUND //lets the robot turn around\n' +
@@ -14,7 +14,7 @@ export default class Game extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            squares: this.createSquares(5,5),
+            squares: this.createSquares(5, 5),
             textAreaTxt: this.script
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,13 +22,13 @@ export default class Game extends React.Component {
         this.handleTextAreaChange = this.handleTextAreaChange.bind(this);
     }
 
-    clearForm(){
-        this.setState({squares: this.createSquares(5,5)});
+    clearForm() {
+        this.setState({squares: this.createSquares(5, 5)});
     }
 
-    createSquares(width, height){
+    createSquares(width, height) {
         var result = [];
-        for (var i = 0 ; i < width; i++) {
+        for (var i = 0; i < width; i++) {
             result[i] = [];
             for (var j = 0; j < height; j++) {
                 result[i][j] = 'empty';
@@ -50,8 +50,9 @@ export default class Game extends React.Component {
             throw new Error('Something went wrong.');
         })
             .then(data => {
-                    this.state.squares[data.y][data.x] = data.direction;
-                    this.forceUpdate();
+                const tempArr = this.state.squares;
+                tempArr[data.y][data.x] = data.direction;
+                this.setState({squares: tempArr});
             })
             .catch(function (error) {
                 console.log('Request failed', error);
@@ -66,27 +67,25 @@ export default class Game extends React.Component {
         return (
             <div className="game">
                 <Jumbotron>
-                <Container>
-                    <Row>
-                        <Col> <Board squares={this.state.squares}/></Col>
-                    </Row>
-                    <Row>
-
-                    </Row>
-                    <Row>
-                        <Col>
-                        <Form onSubmit={this.handleSubmit}>
-
-                            <textarea id="scriptText" className="form-control mb-3 mt-3" value={this.state.textAreaTxt} cols={100} rows={10}
-                                      onChange={this.handleTextAreaChange}/>
-                            <Button type="button" className="mr-2" onClick={this.clearForm}>Clear</Button>
-                            <Button>Submit</Button>
-
-
-                        </Form>
-                    </Col>
-                    </Row>
-                </Container>
+                    <Container>
+                        <Row>
+                            <Col> <Board squares={this.state.squares}/></Col>
+                        </Row>
+                        <Row>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <Form onSubmit={this.handleSubmit}>
+                                    <textarea id="scriptText" className="form-control mb-3 mt-3"
+                                              value={this.state.textAreaTxt}
+                                              cols={100} rows={10}
+                                              onChange={this.handleTextAreaChange}/>
+                                    <Button type="button" className="mr-2" onClick={this.clearForm}>Clear</Button>
+                                    <Button>Submit</Button>
+                                </Form>
+                            </Col>
+                        </Row>
+                    </Container>
                 </Jumbotron>
             </div>
         );

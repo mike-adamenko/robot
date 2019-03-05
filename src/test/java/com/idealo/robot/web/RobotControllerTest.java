@@ -68,4 +68,12 @@ public class RobotControllerTest {
         this.mockMvc.perform(post("/api/calculateNewPosition").contentType(MediaType.TEXT_PLAIN).content(content)).andExpect(status().isOk())
                 .andExpect(content().json("{'x':1,'y':3,'direction':'EAST','onTable':true,'currentStatus':'1,3,EAST'}"));
     }
+
+    @Test
+    public void shouldIgnoreForward5Steps() throws Exception {
+        String content ="POSITION 0 0 SOUTH //sets the initial position for the robot as x, y.\n" +
+                "FORWARD 5 //lets the robot do 5 steps forward";
+        this.mockMvc.perform(post("/api/calculateNewPosition").contentType(MediaType.TEXT_PLAIN).content(content)).andExpect(status().isOk())
+                .andExpect(content().json("{'x':0,'y':0,'direction':'SOUTH','onTable':true,'currentStatus':'0,0,SOUTH'}"));
+    }
 }

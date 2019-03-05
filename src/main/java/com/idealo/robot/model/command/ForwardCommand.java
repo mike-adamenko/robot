@@ -19,7 +19,7 @@ public class ForwardCommand extends Command {
             int steps = Integer.parseInt(getArgs()[0]);
             switch (robot.getDirection()) {
                 case NORTH:
-                    if (robot.getY() < Robot.MAX_POSITION) {
+                    if (robot.getY()-steps >= Robot.MIN_POSITION) {
                         robot.decreaseY(steps);
                         log.debug("The robot is moving");
 
@@ -27,27 +27,24 @@ public class ForwardCommand extends Command {
                         log.debug("Forward command ignored");
                     }
                     break;
-
                 case SOUTH:
-                    if (robot.getY() >= Robot.MIN_POSITION && robot.getY()< Robot.MAX_POSITION) {
+                    if (robot.getY()+steps <= Robot.MAX_POSITION) {
                         robot.increaseY(steps);
                         log.debug("The robot is moving");
                     } else {
                         log.debug("Forward command ignored");
                     }
                     break;
-
                 case EAST:
-                    if (robot.getX() < Robot.MAX_POSITION) {
+                    if (robot.getX()+30 <= Robot.MAX_POSITION) {
                         robot.increaseX(steps);
                         log.debug("The robot is moving");
                     } else {
                         log.debug("Forward command ignored");
                     }
                     break;
-
                 case WEST:
-                    if (robot.getX() > Robot.MIN_POSITION) {
+                    if (robot.getX()-steps >= Robot.MIN_POSITION) {
                         robot.decreaseX(steps);
                         log.debug("The robot is moving");
                     } else {
