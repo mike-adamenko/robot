@@ -5,10 +5,11 @@ package com.idealo.robot.command;
  */
 public class CommandFactory {
     private static CommandType commandType;
+
     public static Command getCommand(String commandString) {
 
         String[] commandStr = commandString.split(" ");
-        if (isValid(commandStr)){
+        if (isValid(commandStr)) {
             switch (commandType) {
                 case POSITION:
                     String[] argsP = {commandStr[1], commandStr[2], commandStr[3]};

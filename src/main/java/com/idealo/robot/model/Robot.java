@@ -2,6 +2,7 @@ package com.idealo.robot.model;
 
 /**
  * Robot
+ *
  * @author Mike Adamenko (mnadamenko@gmail.com)
  */
 public class Robot {
@@ -49,27 +50,27 @@ public class Robot {
     }
 
     public boolean isOnTable() {
-        return x != null && y != null && direction != null && x>=MIN_POSITION && x<=MAX_POSITION && y>=MIN_POSITION && y<=MAX_POSITION;
+        return x != null && y != null && direction != null && x >= MIN_POSITION && x <= MAX_POSITION && y >= MIN_POSITION && y <= MAX_POSITION;
     }
 
     public String getCurrentStatus() {
-        return isOnTable()?String.join(",", x.toString(), y.toString(), direction.toString()):"IGNORED";
+        return isOnTable() ? String.join(",", x.toString(), y.toString(), direction.toString()) : "IGNORED";
     }
 
 
     public void increaseY(int steps) {
-        y+=steps;
+        y += steps;
     }
 
     public void decreaseY(int steps) {
-        y-=steps;
+        y -= steps;
     }
 
     public void increaseX(int steps) {
-        x+=steps;
+        x += steps;
     }
 
     public void decreaseX(int steps) {
-        x-=steps;
+        x -= steps;
     }
 }

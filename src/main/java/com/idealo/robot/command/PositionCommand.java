@@ -35,7 +35,6 @@ public class PositionCommand extends Command {
             }
         } catch (IllegalArgumentException iae) {
             log.debug("Position command is ignored");
-            return;
         }
     }
 }

@@ -1,9 +1,9 @@
 package com.idealo.robot.service;
 
-import com.idealo.robot.command.CommandHolder;
-import com.idealo.robot.model.Robot;
 import com.idealo.robot.command.Command;
 import com.idealo.robot.command.CommandFactory;
+import com.idealo.robot.command.CommandHolder;
+import com.idealo.robot.model.Robot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -12,6 +12,7 @@ import java.util.Arrays;
 
 /**
  * Service to handle robot logic
+ *
  * @author Mike Adamenko (mnadamenko@gmail.com)
  */
 @Service
@@ -47,8 +48,8 @@ public class RobotSimulationService {
      * FORWARD 2 //lets the robot do 2 steps forward
      * </pre>
      *
-     * @param script
-     * @return
+     * @param script string
+     * @return CommandHolder
      */
     private CommandHolder parseScript(String script) {
         CommandHolder commandHolder = new CommandHolder();

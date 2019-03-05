@@ -27,7 +27,7 @@ public class RobotControllerTest {
 
     @Test
     public void shouldReturnValidResult() throws Exception {
-        String content ="POSITION 1 3 EAST //sets the initial position for the robot as x, y.\n" +
+        String content = "POSITION 1 3 EAST //sets the initial position for the robot as x, y.\n" +
                 "FORWARD 3 //lets the robot do 3 steps forward\n" +
                 "WAIT //lets the robot do nothing\n" +
                 "TURNAROUND //lets the robot turn around\n" +
@@ -40,7 +40,7 @@ public class RobotControllerTest {
 
     @Test
     public void shouldReturnValidResultForRequestWithoutComments() throws Exception {
-        String content ="POSITION 1 3 EAST\n" +
+        String content = "POSITION 1 3 EAST\n" +
                 "FORWARD 3\n" +
                 "WAIT\n" +
                 "TURNAROUND\n" +
@@ -53,21 +53,21 @@ public class RobotControllerTest {
 
     @Test
     public void shouldReturnValidResultForOutOfBoard() throws Exception {
-        String content ="POSITION 1 30 EAST";
+        String content = "POSITION 1 30 EAST";
         this.mockMvc.perform(post("/api/calculateNewPosition").contentType(MediaType.TEXT_PLAIN).content(content)).andExpect(status().isOk())
                 .andExpect(content().json("{'x':null,'y':null,'direction':null,'onTable':false,'currentStatus':'IGNORED'}"));
     }
 
     @Test
     public void shouldReturnValidResultForInvalidRequest() throws Exception {
-        String content ="invalid";
+        String content = "invalid";
         this.mockMvc.perform(post("/api/calculateNewPosition").contentType(MediaType.TEXT_PLAIN).content(content)).andExpect(status().isOk())
                 .andExpect(content().json("{'x':null,'y':null,'direction':null,'onTable':false,'currentStatus':'IGNORED'}"));
     }
 
     @Test
     public void shouldIgnoreInvalidCommand() throws Exception {
-        String content ="POSITION 1 3 EAST\n" +
+        String content = "POSITION 1 3 EAST\n" +
                 "FORWdfgARD 3\n";
         this.mockMvc.perform(post("/api/calculateNewPosition").contentType(MediaType.TEXT_PLAIN).content(content)).andExpect(status().isOk())
                 .andExpect(content().json("{'x':1,'y':3,'direction':'EAST','onTable':true,'currentStatus':'1,3,EAST'}"));
@@ -75,7 +75,7 @@ public class RobotControllerTest {
 
     @Test
     public void shouldIgnoreForward5Steps() throws Exception {
-        String content ="POSITION 0 0 SOUTH //sets the initial position for the robot as x, y.\n" +
+        String content = "POSITION 0 0 SOUTH //sets the initial position for the robot as x, y.\n" +
                 "FORWARD 5 //lets the robot do 5 steps forward";
         this.mockMvc.perform(post("/api/calculateNewPosition").contentType(MediaType.TEXT_PLAIN).content(content)).andExpect(status().isOk())
                 .andExpect(content().json("{'x':0,'y':0,'direction':'SOUTH','onTable':true,'currentStatus':'0,0,SOUTH'}"));
@@ -83,7 +83,7 @@ public class RobotControllerTest {
 
     @Test
     public void shouldReturn400() throws Exception {
-        String content ="";
+        String content = "";
         this.mockMvc.perform(post("/api/calculateNewPosition").contentType(MediaType.TEXT_PLAIN).content(content)).andExpect(status().is4xxClientError());
     }
 }

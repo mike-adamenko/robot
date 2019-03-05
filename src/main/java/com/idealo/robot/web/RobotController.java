@@ -15,16 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * RobotController API Entry point
+ *
  * @author Mike Adamenko (mnadamenko@gmail.com)
  */
 @RestController
 @RequestMapping("/api")
 class RobotController {
 
+    private final Logger log = LoggerFactory.getLogger(RobotController.class);
     @Autowired
     RobotSimulationService robotSimulationService;
-
-    private final Logger log = LoggerFactory.getLogger(RobotController.class);
 
     @PostMapping(value = "/calculateNewPosition", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.TEXT_PLAIN_VALUE)
     @ResponseBody

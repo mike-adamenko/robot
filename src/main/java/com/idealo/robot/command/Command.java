@@ -10,7 +10,8 @@ public abstract class Command {
 
     private String[] args;
 
-    public Command() {}
+    public Command() {
+    }
 
     public Command(String[] args) {
         this.args = args;
