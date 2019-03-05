@@ -49,7 +49,7 @@ public class Robot {
     }
 
     public String getCurrentStatus() {
-        return String.join(",", x.toString(), y.toString(), direction.toString());
+        return isOnTable()?String.join(",", x.toString(), y.toString(), direction.toString()):"IGNORED";
     }
 
 

@@ -3,9 +3,9 @@ body {
     margin: 20px;
 }
 
-ol, ul {
-    padding-left: 30px;
-}
+/*ol, ul {*/
+    /*padding-left: 30px;*/
+/*}*/
 
 .board-row:after {
     clear: both;
@@ -20,7 +20,7 @@ ol, ul {
 .NORTH {
     background-position:center;
     background-repeat: no-repeat;
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAAmJLR0QAAKqNIzIAAAAHdElNRQfjAwIWFR8Tu0X0AAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTAzLTAyVDIxOjIxOjMxKzAxOjAw6/YaIAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0wMy0wMlQyMToyMTozMSswMTowMJqropwAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAA9UlEQVRIS+3WQQ5EMBSAYTM3QMIRheAwlu4kFuwcQeIGdOa99EllDH1Np7PpnzSoxJdKNB7iXfCHnvLoPA87y8PaLcsSzPMsrwyC75jbOI4iTVMRRZHouk7O8mLDwzCIJElg08ERx7Ho+17e1Y8Fw0oJresaB5yHYcheuTasrhTAbdtwZFlmtHIt+AylTPFbWEWrqjqglAl+CeugFBf/CnNQioOfwiYopYt/wCpaliULpXTwA2wDpe7wHbaJUlc4wtM07WhRFFZQCp6l7nCw+0EIt22LN/I8t4pSKt40Dc4hvK4rvupfBwZYkP+9dZaHnfUnOAhe83M+VNQoAh0AAAAASUVORK5CYII=");
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAQAAACROWYpAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAAAEgAAABIAEbJaz4AAACfSURBVDjL7dRBCsJADIXhV2+gwnhEUXQO49I7iYvOziMI3qD9XVQoaBNTdSM0WU4+HoQhFfq8Zl/YCf8U33T1NWYXViw4YU+YDzUJIZacGYkLCZHJiLmZ7qRmWrVaO+kuRbjcoPsH9flb6vEAtXmIWvyJ7gw6zMN0iI+gr1zoQkJsA7Tj3a8rIKEjYhOkPT90uFFNFPbrbYSq6fT+C74DROXoTTQleeUAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMDMtMDVUMDQ6MTI6MTItMDY6MDCg2I6tAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTAzLTA1VDA0OjEyOjEyLTA2OjAw0YU2EQAAAABJRU5ErkJggg==");
     border: 1px solid #999;
     float: left;
     font-size: 24px;
@@ -129,11 +129,11 @@ ol, ul {
 
 
 
-form {
-    display: flex;
-    align-items: flex-start;
-    margin-right: 50px;
-    margin-left: 50px;
-}
+/*form {*/
+    /*display: flex;*/
+    /*align-items: flex-start;*/
+    /*margin-right: 50px;*/
+    /*margin-left: 50px;*/
+/*}*/
 
 

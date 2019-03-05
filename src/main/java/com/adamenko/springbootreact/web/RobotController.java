@@ -1,6 +1,5 @@
 package com.adamenko.springbootreact.web;
 
-import com.adamenko.springbootreact.model.CommandHolder;
 import com.adamenko.springbootreact.model.Robot;
 import com.adamenko.springbootreact.service.RobotSimulationService;
 import org.slf4j.Logger;
