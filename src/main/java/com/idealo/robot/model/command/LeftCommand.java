@@ -1,0 +1,35 @@
+package com.idealo.robot.model.command;
+
+import com.idealo.robot.model.Direction;
+import com.idealo.robot.model.Robot;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class LeftCommand extends Command {
+
+    private final Logger log = LoggerFactory.getLogger(LeftCommand.class);
+
+    public void execute(Robot robot) {
+
+        if (!robot.isOnTable()) {
+            log.debug("Left command is ignored");
+        } else {
+            switch (robot.getDirection()) {
+                case NORTH:
+                    robot.setDirection(Direction.WEST);
+                    break;
+                case SOUTH:
+                    robot.setDirection(Direction.EAST);
+                    break;
+                case EAST:
+                    robot.setDirection(Direction.NORTH);
+                    break;
+                case WEST:
+                    robot.setDirection(Direction.SOUTH);
+                    break;
+            }
+            log.debug("The robot is rotating 90 degree to " + robot.getDirection());
+        }
+
+    }
+}
