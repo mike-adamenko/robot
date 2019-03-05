@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * RobotController API Entry point
+ * @author Mike Adamenko (mnadamenko@gmail.com)
+ */
 @RestController
 @RequestMapping("/api")
 class RobotController {

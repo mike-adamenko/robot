@@ -1,4 +1,4 @@
-package com.idealo.robot.model.command;
+package com.idealo.robot.command;
 
 
 import com.idealo.robot.model.Robot;

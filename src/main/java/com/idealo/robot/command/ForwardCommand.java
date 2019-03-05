@@ -1,4 +1,4 @@
-package com.idealo.robot.model.command;
+package com.idealo.robot.command;
 
 import com.idealo.robot.model.Robot;
 import org.slf4j.Logger;
@@ -36,7 +36,7 @@ public class ForwardCommand extends Command {
                     }
                     break;
                 case EAST:
-                    if (robot.getX()+30 <= Robot.MAX_POSITION) {
+                    if (robot.getX()+steps <= Robot.MAX_POSITION) {
                         robot.increaseX(steps);
                         log.debug("The robot is moving");
                     } else {

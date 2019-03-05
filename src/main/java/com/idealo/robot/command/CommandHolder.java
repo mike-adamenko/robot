@@ -1,4 +1,4 @@
-package com.idealo.robot.model;
+package com.idealo.robot.command;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +13,5 @@ public class CommandHolder {
 
     public void setCommands(List<String> commands) {
         this.commands = commands;
-    }
-
-    public void addCommand(String command) {
-        commands.add(command);
     }
 }

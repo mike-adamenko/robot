@@ -1,15 +1,19 @@
 package com.idealo.robot.service;
 
-import com.idealo.robot.model.CommandHolder;
+import com.idealo.robot.command.CommandHolder;
 import com.idealo.robot.model.Robot;
-import com.idealo.robot.model.command.Command;
-import com.idealo.robot.model.command.CommandFactory;
+import com.idealo.robot.command.Command;
+import com.idealo.robot.command.CommandFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 
+/**
+ * Service to handle robot logic
+ * @author Mike Adamenko (mnadamenko@gmail.com)
+ */
 @Service
 public class RobotSimulationService {
 
@@ -52,7 +56,7 @@ public class RobotSimulationService {
         {
             s = s.indexOf('/') != -1 ? s.substring(0, s.indexOf('/')) : s;
             return s;
-        }).forEach(s -> commandHolder.addCommand(s));
+        }).forEach(s -> commandHolder.getCommands().add(s));
 
         return commandHolder;
     }

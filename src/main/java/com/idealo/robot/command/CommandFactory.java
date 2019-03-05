@@ -1,4 +1,4 @@
-package com.idealo.robot.model.command;
+package com.idealo.robot.command;
 
 public class CommandFactory {
     private static CommandType commandType;
