@@ -76,4 +76,10 @@ public class RobotControllerTest {
         this.mockMvc.perform(post("/api/calculateNewPosition").contentType(MediaType.TEXT_PLAIN).content(content)).andExpect(status().isOk())
                 .andExpect(content().json("{'x':0,'y':0,'direction':'SOUTH','onTable':true,'currentStatus':'0,0,SOUTH'}"));
     }
+
+    @Test
+    public void shouldReturn400() throws Exception {
+        String content ="";
+        this.mockMvc.perform(post("/api/calculateNewPosition").contentType(MediaType.TEXT_PLAIN).content(content)).andExpect(status().is4xxClientError());
+    }
 }

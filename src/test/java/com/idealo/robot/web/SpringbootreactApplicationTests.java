@@ -1,4 +1,4 @@
-package com.idealo.robot;
+package com.idealo.robot.web;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -10,8 +10,6 @@ export default class Board extends React.Component {
 
     render() {
         return (
-
-
             <div>
                 {this.props.squares.map((value, index) => {
                     return <div key={index} className="board-row">
@@ -22,7 +20,6 @@ export default class Board extends React.Component {
                         {this.renderSquare(index, 4)}
                         </div>
                 })}
-
             </div>
         );
     }
